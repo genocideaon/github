@@ -1,0 +1,290 @@
+@import url('font/stylesheet.css');
+
+/*------------------------------------------------------------------------*\
+=Reset
+\*------------------------------------------------------------------------*/
+/* * {
+	background: transparent;
+	background-repeat: no-repeat;
+	border: 0;
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+	line-height: 1.2em;
+	-webkit-font-smooting: antialiased; } */
+
+abbr,acronym,address,article,audio,aside,
+b,blockquote,body,
+caption,cite,code,canvas,
+details,del,dfn,div,dl,dt,dd,
+em,fieldset,form,figcaption,figure,footer,
+header,hgroup,h1,h2,h3,h4,h5,h6,html,
+iframe,i,img,ins,
+kbd,li,label,legnd,
+mark,menu,nav,object,ol,p,pre,
+q,section,samp,small,span,strong,sub,sup,summary,
+table,tbody,tfoot,thead,tr,th,td,time,
+ul,var,video {
+	background: transparent;
+	background-repeat: no-repeat;
+	border: 0;
+	-moz-box-sizing: content-box;
+    box-sizing: content-box;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smooting: antialiased; }
+
+body {
+    color: #333;
+    font: normal 14px/1.2 Tahoma, Arial, san-serif;
+	/*padding-bottom: 65px;*/ }
+
+html, body {height: 100%; }
+
+article,aside,dailog,details,figcaption,figure,footer,header,main,menu,nav,section,summary {display: block; }
+audio,canvas,video {display: inline-block; }
+
+::selection {background: #FF5E99; color: #fff; text-shadow: none; }
+
+/*------------------------------------------------------------------------*\
+=Link
+\*------------------------------------------------------------------------*/
+a {text-decoration: none; color: #ec0304; background: transparent; vertical-align: baseline; }
+
+a:hover {text-decoration: underline; opacity: 0.8; }
+
+a:focus {outline: thin dotted; }
+
+a:link {-webkit-tap-highlight-color: inherit; }
+/* a:active {outline: 0; } */
+
+/*------------------------------------------------------------------------*\
+=Typography
+\*------------------------------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {font-weight: bold; }
+
+h1 {font-size: 34px; }
+h2 {font-size: 25px; }
+h3 {font-size: 22px; }
+h4 {font-size: 22px; }
+h5 {font-size: 22px; }
+h6 {font-size: 22px; }
+
+strong {font-weight: bold; }
+em {font-style: italic; }
+img {vertical-align: bottom; }
+li {list-style: none; }
+hr {
+	display: block;
+	height: 0;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0; }
+
+p {margin: 0 0 15px; }
+p .left {float: left; margin: 15px 15px 15px 0; }
+p .right {float: right; margin: 15px 0 15px 15px; }
+
+code, kbd, samp, pre, tt, var {	font: normal 1em/1.5 Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; }
+pre {
+	margin: 1.5em 0;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word; }
+
+abbr, acronym {
+	font-size: 85%;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	border-bottom: 1px dotted #666666; }
+
+abbr[title], acronym[title], dfn[title] {border-bottom: 1px solid #ccc; cursor: help; }
+ins, dfn {border-bottom: 1px solid #000; }
+dfn {font-style: italic; font-weight: bold; }
+ins {background: #ff9; color: #000; text-decoration: none; }
+mark {
+	background: #ff0;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+blockquote, q {quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none; }
+
+blockquote {
+	color: #666;
+	font-style: italic;
+	font-family: "Times New Roman", Times, serif;
+	margin: 1em 40px; }
+
+small, sup, sub {font-size: 85%; }
+
+sub, sup {font-size: 75%; line-height: 0; position: relative; }
+
+sup {top: -0.5em; vertical-align: sub; }
+
+sub {bottom: -0.25em; vertical-align: super; }
+
+address {margin: 0 0 1.5em; font-style: italic; }
+
+del {color: #666; text-decoration: line-through; }
+
+dl {margin: 0 0 1.5em; }
+dt {font-weight: bold; }
+dd {margin: 0 0 0 40px; }
+
+/*------------------------------------------------------------------------*\
+=Form
+\*------------------------------------------------------------------------*/
+select, input, textarea {
+	font-size: 99%;
+	background: none;
+    border: 0;
+    display: block;
+    color: inherit;
+    font: inherit; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    border: 1px solid #e1e1e0;
+    color: #333;
+    font-size: 12px;
+    padding: 0 10px;
+    background: #fff;
+    height: 21px;
+    line-height: 21px;
+    font-family: Tahoma; }
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+	height: 61px; }
+
+fieldset {border: 1px solid #ccc; margin: 0 0 1.5em; padding: 1em 2em; }
+
+legend {font-weight: bold; padding:2px 5px; }
+
+button, input {line-height: normal; box-sizing: content-box; overflow: visible; }
+
+label, button, select, input[type="button"], input[type="reset"], input[type="submit"] {cursor: pointer; }
+
+input[type="checkbox"], input[type="radio"] {box-sizing: border-box; vertical-align: middle; }
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration {-webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+input:invalid, textarea:invalid {background-color: #f0dddd; }
+
+.no-resize {resize: none; }
+
+/*------------------------------------------------------------------------*\
+=Table
+\*------------------------------------------------------------------------*/
+table {
+    width: 100%;
+	margin-bottom: 1.4em;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+th {font-weight: bold; }
+td {vertical-align: top; }
+
+
+
+
+
+
+/*------------------------------------------------------------------------*\
+=Begin
+\*------------------------------------------------------------------------*/
+#wrpCanvas {
+	width: 700px;
+	height: 300px;
+	background: #ccc; 
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-webkit-animation: ; }
+
+.balloon {
+	position: absolute; 
+	top: 69px; 
+	left: 50%; 
+	-webkit-transform: translate(-50%,0%);
+	-webkit-animation-name: ballon-up-down;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate; 
+	-webkit-animation-fill-mode: none;
+	-webkit-animation-play-state: running; }
+
+.balloon img {
+	position: absolute;
+	-webkit-transform: translate(-50%,0%);
+
+	-webkit-animation-name: balloon-begin,ballon-dug-dig,ballon-speed-up;
+	-webkit-animation-duration: 0.5s,1s,5s;
+	-webkit-animation-timing-function: linear,linear;
+	-webkit-animation-delay: 0,0.5s,2s;
+	-webkit-animation-iteration-count: 1,infinite; 
+	-webkit-animation-direction: alternate; 
+	-webkit-animation-fill-mode: none,none,forwards;
+	-webkit-animation-play-state: running,running; }
+
+
+@-webkit-keyframes balloon-begin {
+	0% {
+		top: -350px;
+		width: 330px; 
+		height: 440px; 
+		-webkit-filter: blur(10px); }
+	
+	100% {
+		top: 0; 
+		width: 166px; 
+		height: 220px; 
+		-webkit-filter: blur(0); }
+}
+
+@-webkit-keyframes ballon-up-down {
+	0% {top: 69px; }
+	100% {top: 40px; }
+}
+
+@-webkit-keyframes ballon-dug-dig {
+	0% {width: 166px; height: 220px; }
+	50% {width: 166px; height: 220px; }
+	75% {width: 173px; height: 230px; }
+	100% {width: 166px; height: 220px; }
+}
+
+@-webkit-keyframes ballon-speed-up {
+	0% {-webkit-filter: blur(0); top: 0; }
+	30% {-webkit-filter: blur(0); }
+	50% {-webkit-filter: blur(5px); }
+	75% {top: 0; }
+	95% {-webkit-filter: blur(5px); top: -300px; }
+	100% {-webkit-filter: blur(0); top: 0; }
+}

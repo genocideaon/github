@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+    <head>
+
+        <style>
+            .js-masonry {width: 960px; margin: auto; background: #ccc; padding: 10px; }
+
+            .item { width: 200px; margin: 5px;  height: 200px; background: #fff; overflow: hidden; }
+            .item.w2 { width: 400px; }
+            .item.h2 { height: 500px; }
+        </style>
+    </head>
+
+    <body>
+        <div id="targetElement" class="js-masonry">
+
+            <div class="item"></div>
+            <div class="item w2"></div>
+            <div class="item h2"></div>
+            <div class="item"></div>
+            <div class="item w2"></div>
+            <div class="item h2"></div>
+
+        </div>
+        <a href="#" id="append-button">click for append</a>
+
+        <script src="js/jquery-1.8.3.min.js.js"></script>
+        <script src="js/masonry.pkgd.js"></script>
+        <script src="js/classie.js"></script>
+        <script>
+            window.onload = function(){
+                var tarGe = document.getElementById('targetElement');
+                var elem = document.querySelector('.item');
+                var button = document.querySelector('#append-button');
+                var msnry = new Masonry( tarGe , {
+                    //option
+                    itemSelector: '.item'
+                });
+
+                var requestObj = false;
+
+                if (window.XMLHttpRequest) {
+                    requestObj = new XMLHttpRequest();
+                } else if (window.ActiveXObject) {
+                    requestObj = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                function getData(source) {
+                    var responeText;
+                    if (requestObj) {
+                        requestObj.open("GET", source);
+                        requestObj.onreadystatechange = function ()
+                        {
+                            if (requestObj.readyState == 4 && requestObj.status == 200) {
+                                var dataFormAjax = requestObj.responseText;
+                                var elems = [];
+                                var fragment = document.createDocumentFragment();
+
+                                for(i=0;i<3;i++){
+                                    var elem = getItemElement(dataFormAjax);
+                                    fragment.appendChild( elem );
+                                    elems.push( elem );
+                                }
+                                // append elements to container
+                                tarGe.appendChild( fragment );
+                                // add and lay out newly appended elements
+                                msnry.appended( elems );
+
+                            }
+                        }
+                        requestObj.send(null);
+                    }
+                }
+
+
+
+                function getItemElement(dataFormAjax){
+                    var elem = document.createElement('div');
+                    var wRand = Math.random();
+                    var hRand = Math.random();
+                    var widthClass = wRand > 0.6 ? 'w2' : '';
+                    var heightClass = hRand > 0.35 ? 'h2' : '';
+                    elem.innerHTML = dataFormAjax;
+                    elem.className = 'item ' + widthClass + ' ' + heightClass;
+                    return elem;
+                }
+
+                eventie.bind( button, 'click', function(e) {
+                    e.preventDefault();
+                    // create new item elements
+                    getData('text.php');
+
+                });
+            }
+        </script>
+    </body>
+
+</html>

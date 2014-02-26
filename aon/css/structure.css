@@ -1,0 +1,20 @@
+/*	=Default icon
+ 	preficIcon-icn
+        preficIcon-icn-subficAction(hover)
+        preficIcon-icn-subficAction(act)
+
+        ------------------------------*/
+        /**[class*="icn"] {
+        background-image: url(../imgs/icon/sprite.png);
+        background-color: transparent;
+        display: block;
+        float: left;
+        height: 20px;
+        overflow: hidden;
+        text-indent: -999px;
+        width: 20px; }
+
+        *:hover>*[class*="icn-hover"] {background-image: url(../imgs/icon/sprite-hover.png); text-decoration: none; }
+        *[class*="icn-act"] {background-image: url(../imgs/icon/sprite-hover.png); }
+        
+        [class*="notifications-icn"] {background-position: 0 0; }*/

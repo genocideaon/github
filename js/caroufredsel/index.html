@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="author" content="caroufredsel.dev7studios.com" />
+
+		<title>carouFredSel: a circular, responsive jQuery carousel</title>
+
+		<!-- include jQuery + carouFredSel plugin -->
+		<script type="text/javascript" language="javascript" src="jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" language="javascript" src="jquery.carouFredSel-6.2.0-packed.js"></script>
+
+		<!-- optionally include helper plugins -->
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.touchSwipe.min.js"></script>
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.transit.min.js"></script>
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
+
+		<!-- fire plugin onDocumentReady -->
+		<script type="text/javascript" language="javascript">
+			jQuery(function() {
+				//	Scrolled by user interaction
+				jQuery('#foo2').carouFredSel({
+					auto: false,
+					prev: '#prev2',
+					next: '#next2',
+					pagination: "#pager2",
+					mousewheel: true,
+					swipe: {
+						onMouse: true,
+						onTouch: true
+					}
+				});
+			});
+		</script>
+
+		<style type="text/css" media="all">
+			.list_carousel {
+				width: 360px;
+			}
+			.list_carousel li {
+				width: 50px;
+				height: 50px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+
+		
+
+		<div class="wrapper">
+			<div class="list_carousel">
+				<ul id="foo2">
+					<li>c</li>
+					<li>a</li>
+					<li>r</li>
+					<li>o</li>
+					<li>u</li>
+					<li>F</li>
+					<li>r</li>
+					<li>e</li>
+					<li>d</li>
+					<li>S</li>
+					<li>e</li>
+					<li>l</li>
+					<li> </li>
+				</ul>
+				<a id="prev2" class="prev" href="#">&lt;</a>
+				<div id="pager2" class="pager"></div>
+				<a id="next2" class="next" href="#">&gt;</a>
+			</div>
+		</div>			
+	</body>
+</html>
