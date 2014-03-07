@@ -1,35 +1,83 @@
 <!DOCTYPE html>
-<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML5 Canvas Drawing Board | onlyWebPro.com</title>
+    <style>
+        #message a
+        {
+            /* display: block before hiding */
+            display: block;
+            display: none;
 
-    <head>
-        <style>
+            /* link is above all other elements */
+            z-index: 999; 
 
-        </style>
-    </head>
+            /* link doesn't hide text behind it */
+            opacity: .8;
 
-    <body>
-        <form id="file-form" action="handler.php" method="POST">
-            <input type="file" id="file-select" name="photos[]" multiple/>
-            <button type="submit" id="upload-button">Upload</button>
-        </form>
-        <script type="text/javascript">
-            var formData = new FormData();
+            /* link stays at same place on page */
+            position: fixed;
 
-            formData.append("username", "Groucho");
-            formData.append("accountnum", 123456); // number 123456 is immediately converted to string "123456"
+            /* link goes at the bottom of the page */
+            top: 100%;
+            margin-top: -80px; /* = height + preferred bottom margin */
 
-            //    // HTML file input user's choice...
-            //    formData.append("userfile", fileInputElement.files[0]);
+            /* link is centered */
+            left: 50%;
+            margin-left: -160px; /* = half of width */
 
-            // JavaScript file-like object...
-            var content = '<a id="a"><b id="b">hey!</b></a>'; // the body of the new file...
-            var blob = new Blob([content], {type: "text/xml"});
+            /* round the corners (to your preference) */
+            -moz-border-radius: 24px;
+            -webkit-border-radius: 24px;
 
-            formData.append("webmasterfile", blob);
+            /* make it big and easy to see (size, style to preferences) */
+            width: 300px;
+            line-height: 48px;
+            height: 48px;
+            padding: 10px;
+            background-color: #000;
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <!-- put all of your normal <body> stuff here -->
+    <?php for($i=0;$i<100;$i++): ?>
+    xxxx<br>
+    <?php endfor; ?>
+    <div id="message"><a href="#top">Scroll to top</a></div>
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <script type="text/javascript">
+        $(function () { // run this code on page load (AKA DOM load)
 
+            /* set variables locally for increased performance */
+            var scroll_timer;
+            var displayed = false;
+            var $message = $('#message a');
+            var $window = $(window);
+            var top = $(document.body).children(0).position().top;
+            console.log('top: '+top);
 
-            console.log(formData);
-        </script>
-    </body>
-
+            /* react to scroll event on window */
+            $window.scroll(function () {
+                window.clearTimeout(scroll_timer);
+                scroll_timer = window.setTimeout(function () { // use a timer for performance
+                    if($window.scrollTop() <= top) // hide if at the top of the page
+                    {
+                        displayed = false;
+                        $message.fadeOut(500);
+                    }
+                    else if(displayed == false) // show if scrolling down
+                    {
+                        displayed = true;
+                        $message.stop(true, true).show().click(function () { $message.fadeOut(500); });
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
 </html>
