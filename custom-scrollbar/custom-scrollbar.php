@@ -32,7 +32,7 @@
         }
 
         .ssb_down {
-            background:transparent url(../images/icon-arrow-down.png);
+            background:transparent url(images/icon-arrow-down.png);
             bottom:0;
             cursor:pointer;
             position:absolute;
@@ -40,22 +40,22 @@
         }
 
         .ssb_sb {
-            background:transparent url(../images/middle.png);
+            background:transparent url(images/middle.png);
             cursor:pointer;
             position:absolute;
             right:0;
         }
 
         .ssb_sb_down {
-            background:transparent url(../images/middrag.png);
+            background:transparent url(images/middrag.png);
         }
 
         .ssb_sb_over {
-            background:transparent url(../images/midhover.png);
+            background:transparent url(images/midhover.png);
         }
 
         .ssb_st {
-            background:transparent url(../images/back.png);
+            background:transparent url(images/back.png);
             cursor:pointer;
             height:100%;
             position:absolute;
@@ -64,7 +64,7 @@
         }
 
         .ssb_up {
-            background:transparent url(../images/icon-arrow-up.png);
+            background:transparent url(images/icon-arrow-up.png);
             cursor:pointer;
             position:absolute;
             right:0;
@@ -327,7 +327,6 @@
         window.onload = function() {
             ssb.scrollbar('main_content'); // scrollbar initialization
         }
-
     </script>
 </body>
 
