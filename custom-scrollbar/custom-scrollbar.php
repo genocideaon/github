@@ -172,7 +172,7 @@
                         this.className = 'ssb_sb ssb_sb_down';
                     }
                     return false;
-                }
+                };
                 // on mouse down on free track area - move our scroll element too
                 cont.st.onmousedown = function(e) {
                     if (!e)
@@ -180,21 +180,21 @@
                     ssb.asd = this.cont;
 
                     ssb.mouseY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-                    for (var o = this.cont, y = 0; o != null; o = o.offsetParent)
+                    for (var o = this.cont, y = 0; o !== null; o = o.offsetParent)
                         y += o.offsetTop;
                     this.cont.scrollTop = (ssb.mouseY - y - (this.cont.ratio * this.cont.offsetHeight / 2) - this.cont.sw) / this.cont.ratio;
                     this.cont.sb.onmousedown(e);
-                }
+                };
 
                 // onmousedown events
                 cont.su.onmousedown = cont.su.ondblclick = function(e) {
                     ssb.mousedown(this, -1);
                     return false;
-                }
+                };
                 cont.sd.onmousedown = cont.sd.ondblclick = function(e) {
                     ssb.mousedown(this, 1);
                     return false;
-                }
+                };
 
                 //onmouseout events
                 cont.su.onmouseout = cont.su.onmouseup = ssb.clear;
@@ -205,20 +205,20 @@
                     if (!this.cont.sg)
                         this.className = 'ssb_sb ssb_sb_over';
                     return false;
-                }
+                };
 
                 // on mouse out - revert back our usual class name 'ssb_sb'
                 cont.sb.onmouseout = function(e) {
                     if (!this.cont.sg)
                         this.className = 'ssb_sb';
                     return false;
-                }
+                };
 
                 // onscroll - change positions of scroll element
                 cont.ssb_onscroll = function() {
                     this.ratio = (this.offsetHeight - 2 * this.sw) / this.scrollHeight;
                     this.sb.style.top = Math.floor(this.sw + this.scrollTop * this.ratio) + 'px';
-                }
+                };
 
                 // scrollbar width
                 cont.sw = 20;
@@ -280,7 +280,7 @@
             },
             // arrow scrolling
             arrow_scroll: function() {
-                if (ssb.sc != 0) {
+                if (ssb.sc !== 0) {
                     ssb.asd.scrollTop += 6 * ssb.sc / ssb.asd.ratio;
                     ssb.to = setTimeout(ssb.arrow_scroll, ssb.sp);
                     ssb.sp = 32;
@@ -289,7 +289,7 @@
             /* event binded functions : */
             // scroll on mouse down
             mousedown: function(o, s) {
-                if (ssb.sc == 0) {
+                if (ssb.sc === 0) {
                     // new class name
                     o.cont.sb.className = 'ssb_sb ssb_sb_down';
                     ssb.asd = o.cont;
@@ -322,11 +322,11 @@
                 ssb.clear();
                 ssb.asd.sg = false;
             }
-        }
+        };
 
         window.onload = function() {
             ssb.scrollbar('main_content'); // scrollbar initialization
-        }
+        };
     </script>
 </body>
 
